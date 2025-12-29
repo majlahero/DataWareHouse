@@ -1,0 +1,174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Sakila Analysic Multidimensional\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Actor.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Dim Actor.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Inventory.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Dim Inventory.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Customers.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Dim Customers.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Staff.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Dim Staff.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Rental.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Dim Rental.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Address.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Dim Address.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Sakila DWH.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Sakila DWH.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Sakila DWH.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{FA8031B4-7522-47DF-B028-DC045B3AE29A}|Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional.dwproj|solutionrelative:Sakila Analysic Multidimensional\\Sakila DWH.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dim Rental.dim [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Rental.dim",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Dim Rental.dim",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Rental.dim [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Dim Rental.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T09:03:39.383Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dim Actor.dim [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Actor.dim",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Dim Actor.dim",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Actor.dim [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Dim Actor.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T09:04:20.295Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dim Staff.dim [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Staff.dim",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Dim Staff.dim",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Staff.dim [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Dim Staff.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T09:04:18.424Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Customers.dim [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Customers.dim",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Dim Customers.dim",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Customers.dim [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Dim Customers.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T09:04:08.514Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Sakila DWH.dsv [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Sakila DWH.dsv",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Sakila DWH.dsv",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Sakila DWH.dsv [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Sakila DWH.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T08:57:12.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Inventory.dim [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Inventory.dim",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Dim Inventory.dim",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Inventory.dim [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Dim Inventory.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T07:36:15.059Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dim Address.dim [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Address.dim",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Dim Address.dim",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Address.dim [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Dim Address.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T07:34:35.336Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Date.dim",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Dim Date.dim",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Dim Date.dim [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T07:29:17.705Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Sakila DWH.cube [Design]",
+              "DocumentMoniker": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Sakila DWH.cube",
+              "RelativeDocumentMoniker": "Sakila Analysic Multidimensional\\Sakila DWH.cube",
+              "ToolTip": "D:\\Sakila Analysic Multidimensional\\Sakila Analysic Multidimensional\\Sakila DWH.cube [Design]",
+              "RelativeToolTip": "Sakila Analysic Multidimensional\\Sakila DWH.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-21T07:29:16.091Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

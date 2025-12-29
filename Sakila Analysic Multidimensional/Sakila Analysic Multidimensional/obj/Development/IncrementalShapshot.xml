@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Sakila Analysic Multidimensional</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>g5op1bkT/wfTfM7n2EXGHbmq3UU=5/21/2025 2:23:29 PM5/21/2025 2:23:29 PM</TimeStamp>
+        <ID>
+          <String>Sakila DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>BqtJeSyA8Sq+CIBfM6taM4Awymk=5/21/2025 5:12:16 PM5/21/2025 2:23:38 PM</TimeStamp>
+        <ID>
+          <String>Sakila DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bB3YzCgQdO+0zdgTIrTQ8/4agOI=5/21/2025 2:32:58 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>kqfNx8aLhwvkioMdX776eq6jPN8=5/21/2025 2:35:44 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Dim Address</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>apgVmBbyv3oiZfl5w9C8IFk7lH0=5/21/2025 5:12:16 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Dim Rental</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>OInJl/1x+Bn9vw40pv8MZMeHxaI=5/21/2025 8:29:58 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Dim Customers</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>+dhuTM59S3ciTjTRNCuPnfQhWAs=5/21/2025 8:31:27 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Dim Staff</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>DuvFf4QbqFYrQpWnL4nJTO1/7Hk=5/21/2025 8:32:45 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Dim Actor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>mkAbI0UMa7SYHCAhhpG04gkQ9F4=5/21/2025 2:47:24 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Dim Inventory</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>q0i6H5JsrA5bS4aH4OQGjJ2LcdQ=5/21/2025 8:32:45 PM5/21/2025 2:29:15 PMgvmXHOqzoqYw/NvbSkJYSrCjuTE=5/21/2025 2:29:16 PM5/21/2025 2:29:15 PM</TimeStamp>
+        <ID>
+          <String>Sakila DWH</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>ou/VN5IZPjb0890Fu9LQQGr6Ttw=5/21/2025 2:22:16 PM5/21/2025 2:22:16 PM</TimeStamp>
+      <ID>
+        <String>Sakila Analysic Multidimensional</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-05-21T13:32:47.316667Z</LastDeployed>
+</DeploymentSnapshot>

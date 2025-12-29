@@ -1,0 +1,105 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="03d070e3-1b3b-4dfa-a303-5cbd28f3cdeb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sakila DWH</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact BP Customer</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="2375b64f-6cf8-4894-9323-57cf8389bba1">
+          <ID>Fact BP Customer</ID>
+          <Name>Fact BP Customer</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c67bdf52-16a8-461d-8331-b310b6f6bd32">
+            <DataSourceViewID>Sakila DWH</DataSourceViewID>
+            <TableID>dbo_FactBPCustomer</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact B Performance</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="220f15f7-0d08-4957-a46f-73197b468197">
+          <ID>Fact B Performance</ID>
+          <Name>Fact B Performance</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="4b20c0dc-362e-4a0d-9e74-bec4f7f4cbaa">
+            <DataSourceViewID>Sakila DWH</DataSourceViewID>
+            <TableID>dbo_FactBPerformance</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact BP Film Actor</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f59c56dd-523d-4c25-a550-1f7bd38363df">
+          <ID>Fact BP Film Actor</ID>
+          <Name>Fact BP Film Actor</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b15b607b-e2fb-45b0-98c4-df4e39d4bb60">
+            <DataSourceViewID>Sakila DWH</DataSourceViewID>
+            <TableID>dbo_FactBPFilmActor</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact BP Film Inventory</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="3984d810-54c8-4352-859b-1992f5f108d4">
+          <ID>Fact BP Film Inventory</ID>
+          <Name>Fact BP Film Inventory</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="45017d3e-289c-4239-83ee-a01d5e900760">
+            <DataSourceViewID>Sakila DWH</DataSourceViewID>
+            <TableID>dbo_FactBPFilmInventory</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Rental Expense</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="76800ff6-cceb-4539-9dfa-9d3080e3c3c8">
+          <ID>Fact Rental Expense</ID>
+          <Name>Fact Rental Expense</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="93b7f412-aba0-489a-880a-67548f46d8a0">
+            <DataSourceViewID>Sakila DWH</DataSourceViewID>
+            <TableID>dbo_FactRentalExpense</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

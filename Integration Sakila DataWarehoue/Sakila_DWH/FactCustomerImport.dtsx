@@ -1,0 +1,2435 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/21/2025 2:31:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\Admin"
+  DTS:DTSID="{FE2CD1C4-751A-4CE0-AD4D-6417E3E6D796}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="FactCustomerImport"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{C8B6AF44-61B9-4A99-9918-1ACD839EAF9C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C0FB4762-1788-426F-81ED-59A08A7B2B6D}"
+      DTS:ObjectName="MSI\QUANGDUNG.SakilaDWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MSI\QUANGDUNG;Initial Catalog=SakilaDWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaStage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A95F2CDE-C7A7-42DD-8EBC-70855DC5E0AF}"
+      DTS:ObjectName="MSI\QUANGDUNG.SakilaStage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MSI\QUANGDUNG;Initial Catalog=SakilaStage;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaStage 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{785A5DBF-54E9-4549-A912-12E0597514D7}"
+      DTS:ObjectName="MSI\QUANGDUNG.SakilaStage 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MSI\QUANGDUNG;Initial Catalog=SakilaStage;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF - Extract From Source to Stage stgFactCustomer"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8D74A955-F20D-4D4E-89D9-B3795320E066}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Extract From Source to Stage stgFactCustomer"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST - Stage stgFactCustomer"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stgFactCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaStage]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[customer_key]"
+                      cachedDataType="i4"
+                      cachedName="customer_key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[customer_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[customer_key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[address_key]"
+                      cachedDataType="i4"
+                      cachedName="address_key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[address_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[address_key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[rental_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[rental_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[rental_id]"
+                      cachedDataType="i4"
+                      cachedName="rental_id"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[rental_id]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_id]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[rental_date_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_date_key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[rental_date_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_date_key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[amount]"
+                      cachedDataType="numeric"
+                      cachedName="amount"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[amount]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[payment_date_key]"
+                      cachedDataType="i4"
+                      cachedName="payment_date_key"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[payment_date_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[payment_date_key]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[recency]"
+                      cachedDataType="i4"
+                      cachedName="recency"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[recency]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[recency]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[frequency]"
+                      cachedDataType="i4"
+                      cachedName="frequency"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[frequency]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[frequency]" />
+                    <inputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].Columns[monetary]"
+                      cachedDataType="numeric"
+                      cachedName="monetary"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[monetary]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[monetary]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[customer_key]"
+                      dataType="i4"
+                      name="customer_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[address_key]"
+                      dataType="i4"
+                      name="address_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[rental_key]"
+                      dataType="i4"
+                      name="rental_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[rental_id]"
+                      dataType="i4"
+                      name="rental_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[rental_date_key]"
+                      dataType="i4"
+                      name="rental_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      dataType="numeric"
+                      name="amount"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[payment_date_key]"
+                      dataType="i4"
+                      name="payment_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[recency]"
+                      dataType="i4"
+                      name="recency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[frequency]"
+                      dataType="i4"
+                      name="frequency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input].ExternalColumns[monetary]"
+                      dataType="numeric"
+                      name="monetary"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Sakila_fact_customer"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactBPCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+	c.customer_key, c.first_name, c.last_name, 
+	a.address_key, a.address,
+	r.rental_key, r.rental_id,
+	(DAY(r.rental_date) + MONTH(r.rental_date) * 100 + YEAR(r.rental_date) * 10000) as rental_date_key,
+	(DAY(r.payment_date) + MONTH(r.payment_date) * 100 + YEAR(r.payment_date) * 10000) as payment_date_key,
+	r.amount,
+	DATEDIFF(DAY, x.last_rental_date, GETDATE()) AS recency,
+	y.freq AS frequency,
+	y.total_amount AS monetary
+FROM DimCustomers c
+INNER JOIN DimAddress a ON c.address_id = a.address_key
+INNER JOIN DimRental r ON c.customer_id = r.customer_id
+CROSS APPLY (
+	SELECT MAX(rental_date) AS last_rental_date
+	FROM DimRental
+	WHERE customer_id = c.customer_id
+) x
+CROSS APPLY (
+	SELECT COUNT(*) AS freq, SUM(amount) AS total_amount
+	FROM DimRental
+	WHERE customer_id = c.customer_id
+) y</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[customer_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[customer_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[customer_key]"
+                      name="customer_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="45"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="45"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[address_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[address_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[address_key]"
+                      name="address_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      length="50"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[rental_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_key]"
+                      name="rental_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[rental_id]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_id]"
+                      name="rental_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_date_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[rental_date_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[rental_date_key]"
+                      name="rental_date_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[amount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[amount]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[amount]"
+                      name="amount"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[payment_date_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[payment_date_key]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[payment_date_key]"
+                      name="payment_date_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[recency]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[recency]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[recency]"
+                      name="recency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[frequency]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[frequency]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[frequency]"
+                      name="frequency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[monetary]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[monetary]"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].Columns[monetary]"
+                      name="monetary"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[customer_key]"
+                      dataType="i4"
+                      name="customer_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[address_key]"
+                      dataType="i4"
+                      name="address_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[rental_key]"
+                      dataType="i4"
+                      name="rental_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[rental_id]"
+                      dataType="i4"
+                      name="rental_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[rental_date_key]"
+                      dataType="i4"
+                      name="rental_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[amount]"
+                      dataType="numeric"
+                      name="amount"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[payment_date_key]"
+                      dataType="i4"
+                      name="payment_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[recency]"
+                      dataType="i4"
+                      name="recency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[frequency]"
+                      dataType="i4"
+                      name="frequency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output].ExternalColumns[monetary]"
+                      dataType="numeric"
+                      name="monetary"
+                      precision="38" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[customer_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[customer_key]"
+                      name="customer_key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[address_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[address_key]"
+                      name="address_key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[address]"
+                      name="address" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[rental_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[rental_key]"
+                      name="rental_key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[rental_id]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[rental_id]"
+                      name="rental_id" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[rental_date_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[rental_date_key]"
+                      name="rental_date_key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[amount]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[amount]"
+                      name="amount"
+                      precision="18" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[payment_date_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[payment_date_key]"
+                      name="payment_date_key" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[recency]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[recency]"
+                      name="recency" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[frequency]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[frequency]"
+                      name="frequency" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[monetary]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[monetary]"
+                      name="monetary"
+                      precision="38" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Extract From Source to Stage stgFactCustomer.Paths[OLE DB Source Output]"
+              endId="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF - Load from stgFactCustomer to FactBPCustomer"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0F9597AB-E19D-46FA-867C-5712E5795CBC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF - Load from stgFactCustomer to FactBPCustomer"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="DST - Slowly Changing Dimension FactBPCustomer"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [address], [address_key], [amount], [customer_key], [first_name], [frequency], [last_name], [monetary], [payment_date_key], [recency], [rental_date_key], [rental_id], [rental_key] FROM [dbo].[FactBPCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[address]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[address_key]"
+                      cachedDataType="i4"
+                      cachedName="address_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[address_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[amount]"
+                      cachedDataType="numeric"
+                      cachedName="amount"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[amount]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[amount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[customer_key]"
+                      cachedDataType="i4"
+                      cachedName="customer_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[customer_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[customer_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[first_name]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[first_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[frequency]"
+                      cachedDataType="i4"
+                      cachedName="frequency"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[frequency]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[frequency]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[last_name]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[last_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[monetary]"
+                      cachedDataType="numeric"
+                      cachedName="monetary"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[monetary]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[monetary]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[payment_date_key]"
+                      cachedDataType="i4"
+                      cachedName="payment_date_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[payment_date_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[payment_date_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[recency]"
+                      cachedDataType="i4"
+                      cachedName="recency"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[recency]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[recency]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[rental_date_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_date_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[rental_date_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_date_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[rental_id]"
+                      cachedDataType="i4"
+                      cachedName="rental_id"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[rental_id]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].Columns[rental_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[rental_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[address_key]"
+                      dataType="i4"
+                      name="address_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[amount]"
+                      dataType="numeric"
+                      name="amount"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[customer_key]"
+                      dataType="i4"
+                      name="customer_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[frequency]"
+                      dataType="i4"
+                      name="frequency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[monetary]"
+                      dataType="numeric"
+                      name="monetary"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[payment_date_key]"
+                      dataType="i4"
+                      name="payment_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[recency]"
+                      dataType="i4"
+                      name="recency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[rental_date_key]"
+                      dataType="i4"
+                      name="rental_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[rental_id]"
+                      dataType="i4"
+                      name="rental_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input].ExternalColumns[rental_key]"
+                      dataType="i4"
+                      name="rental_key" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactBPCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[customer_key]"
+                      cachedDataType="i4"
+                      cachedName="customer_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[customer_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[address_key]"
+                      cachedDataType="i4"
+                      cachedName="address_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[address_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[rental_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rental_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[rental_id]"
+                      cachedDataType="i4"
+                      cachedName="rental_id"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rental_id]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_id]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[rental_date_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_date_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rental_date_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_date_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[amount]"
+                      cachedDataType="numeric"
+                      cachedName="amount"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[amount]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[payment_date_key]"
+                      cachedDataType="i4"
+                      cachedName="payment_date_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_date_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[payment_date_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[recency]"
+                      cachedDataType="i4"
+                      cachedName="recency"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[recency]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[recency]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[frequency]"
+                      cachedDataType="i4"
+                      cachedName="frequency"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[frequency]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[frequency]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[monetary]"
+                      cachedDataType="numeric"
+                      cachedName="monetary"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[monetary]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[monetary]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_key]"
+                      dataType="i4"
+                      name="customer_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[address_key]"
+                      dataType="i4"
+                      name="address_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rental_key]"
+                      dataType="i4"
+                      name="rental_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rental_id]"
+                      dataType="i4"
+                      name="rental_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[rental_date_key]"
+                      dataType="i4"
+                      name="rental_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      dataType="numeric"
+                      name="amount"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_date_key]"
+                      dataType="i4"
+                      name="payment_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[recency]"
+                      dataType="i4"
+                      name="recency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[frequency]"
+                      dataType="i4"
+                      name="frequency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[monetary]"
+                      dataType="numeric"
+                      name="monetary"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[FactBPCustomer] SET [address] = ?,[address_key] = ?,[amount] = ?,[first_name] = ?,[frequency] = ?,[last_name] = ?,[monetary] = ?,[payment_date_key] = ?,[recency] = ?,[rental_date_key] = ?,[rental_id] = ?,[rental_key] = ? WHERE [customer_key] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaDWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="address"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[address_key]"
+                      cachedDataType="i4"
+                      cachedName="address_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[amount]"
+                      cachedDataType="numeric"
+                      cachedName="amount"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[amount]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[customer_key]"
+                      cachedDataType="i4"
+                      cachedName="customer_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[customer_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[frequency]"
+                      cachedDataType="i4"
+                      cachedName="frequency"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[frequency]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[monetary]"
+                      cachedDataType="numeric"
+                      cachedName="monetary"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[monetary]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[payment_date_key]"
+                      cachedDataType="i4"
+                      cachedName="payment_date_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[payment_date_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[recency]"
+                      cachedDataType="i4"
+                      cachedName="recency"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[recency]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[rental_date_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_date_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_date_key]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[rental_id]"
+                      cachedDataType="i4"
+                      cachedName="rental_id"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_id]" />
+                    <inputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[rental_key]"
+                      cachedDataType="i4"
+                      cachedName="rental_key"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="numeric"
+                      name="Param_2"
+                      precision="5"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="numeric"
+                      name="Param_6"
+                      precision="5"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="i4"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="i4"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="i4"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="i4"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      dataType="i4"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC - Stage stgFactCustomer"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stgFactCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaStage]"
+                  connectionManagerRefId="Package.ConnectionManagers[MSI\QUANGDUNG.SakilaStage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[customer_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[customer_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[customer_key]"
+                      name="customer_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="45"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="45"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[address_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address_key]"
+                      name="address_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      length="50"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address]"
+                      name="address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[rental_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_key]"
+                      name="rental_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[rental_id]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_id]"
+                      name="rental_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_date_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[rental_date_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_date_key]"
+                      name="rental_date_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[amount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[amount]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[amount]"
+                      name="amount"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[payment_date_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[payment_date_key]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[payment_date_key]"
+                      name="payment_date_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[recency]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[recency]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[recency]"
+                      name="recency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[frequency]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[frequency]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[frequency]"
+                      name="frequency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[monetary]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[monetary]"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[monetary]"
+                      name="monetary"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[customer_key]"
+                      dataType="i4"
+                      name="customer_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[address_key]"
+                      dataType="i4"
+                      name="address_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[rental_key]"
+                      dataType="i4"
+                      name="rental_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[rental_id]"
+                      dataType="i4"
+                      name="rental_id" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[rental_date_key]"
+                      dataType="i4"
+                      name="rental_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[amount]"
+                      dataType="numeric"
+                      name="amount"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[payment_date_key]"
+                      dataType="i4"
+                      name="payment_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[recency]"
+                      dataType="i4"
+                      name="recency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[frequency]"
+                      dataType="i4"
+                      name="frequency" />
+                    <externalMetadataColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].ExternalColumns[monetary]"
+                      dataType="numeric"
+                      name="monetary"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[customer_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[customer_key]"
+                      name="customer_key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[address_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[address_key]"
+                      name="address_key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[address]"
+                      name="address" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[rental_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[rental_key]"
+                      name="rental_key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[rental_id]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[rental_id]"
+                      name="rental_id" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[rental_date_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[rental_date_key]"
+                      name="rental_date_key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[amount]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[amount]"
+                      name="amount"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[payment_date_key]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[payment_date_key]"
+                      name="payment_date_key" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[recency]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[recency]"
+                      name="recency" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[frequency]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[frequency]"
+                      name="frequency" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[monetary]"
+                      dataType="numeric"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[monetary]"
+                      name="monetary"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF - Load from stgFactCustomer to FactBPCustomer.Paths[Changing Attribute Updates Output]"
+              endId="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\DF - Load from stgFactCustomer to FactBPCustomer.Paths[New Output]"
+              endId="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Outputs[New Output]" />
+            <path
+              refId="Package\DF - Load from stgFactCustomer to FactBPCustomer.Paths[OLE DB Source Output]"
+              endId="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Truncate stgCustomer Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6569C5BC-545D-4C1A-81E0-F3A6F3416115}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Truncate stgCustomer Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A95F2CDE-C7A7-42DD-8EBC-70855DC5E0AF}"
+          SQLTask:SqlStatementSource="truncate table stgFactCustomer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{25C58426-6A15-4D5D-BBA1-52E53A5118B2}"
+      DTS:From="Package\SQL Truncate stgCustomer Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF - Extract From Source to Stage stgFactCustomer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{76E466D4-28EA-4FB2-BE6C-2371E0A633EC}"
+      DTS:From="Package\DF - Extract From Source to Stage stgFactCustomer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DF - Load from stgFactCustomer to FactBPCustomer" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="322.4,41.6"
+          Id="Package\DF - Extract From Source to Stage stgFactCustomer"
+          TopLeft="204.285714720585,150.647058691481" />
+        <NodeLayout
+          Size="325.6,41.6"
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer"
+          TopLeft="200.714286141554,215.647058634506" />
+        <NodeLayout
+          Size="233.6,41.6"
+          Id="Package\SQL Truncate stgCustomer Table"
+          TopLeft="245.000000521541,81.8235293400432" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="363.642857621063,123.423529340043">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.2235293514381"
+              Start="0,0"
+              End="0,19.7235293514381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7235293514381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="364.500000431069,192.247058691481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.399999943025"
+              Start="0,0"
+              End="0,15.899999943025">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.899999943025" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF - Extract From Source to Stage stgFactCustomer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer"
+          TopLeft="240.000000510897,40.5294117291803" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer"
+          TopLeft="235.714286216059,123.882352832589" />
+        <EdgeLayout
+          Id="Package\DF - Extract From Source to Stage stgFactCustomer.Paths[OLE DB Source Output]"
+          TopLeft="344.457143363478,82.1294117291803">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.7529411034085"
+              Start="0,0"
+              End="0,34.2529411034085">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.2529411034085" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgFactCustomer\DST - Stage stgFactCustomer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Extract From Source to Stage stgFactCustomer\SRC - Sakila_fact_customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF - Load from stgFactCustomer to FactBPCustomer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer\OLE DB Command"
+          TopLeft="357.29999807775,206.700000029803" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer\Insert Destination"
+          TopLeft="79.4999988973141,207.700000014901" />
+        <NodeLayout
+          Size="318.4,41.6"
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer"
+          TopLeft="151.5,107.1" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer"
+          TopLeft="202.3,5.50000000000007" />
+        <EdgeLayout
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1000000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer.Paths[New Output]"
+          TopLeft="258.966666666667,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.2666677693526,59.0000000149012"
+              Start="0,0"
+              End="-98.2666677693526,51.5000000149012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7770000060052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.7770000060052"
+                    Point2="0,23.7770000060052"
+                    Point3="-4,23.7770000060052" />
+                  <mssgle:LineSegment
+                    End="-94.2666677693526,23.7770000060052" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.2666677693526,23.7770000060052"
+                    Point2="-98.2666677693526,23.7770000060052"
+                    Point3="-98.2666677693526,27.7770000060052" />
+                  <mssgle:LineSegment
+                    End="-98.2666677693526,51.5000000149012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-76.2247206034263,28.7770000060052,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF - Load from stgFactCustomer to FactBPCustomer.Paths[Changing Attribute Updates Output]"
+          TopLeft="362.433333333333,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.266664744417,58.0000000298024"
+              Start="0,0"
+              End="77.266664744417,50.5000000298024">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3740000120103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3740000120103"
+                    Point2="0,23.3740000120103"
+                    Point3="4,23.3740000120103" />
+                  <mssgle:LineSegment
+                    End="73.266664744417,23.3740000120103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.266664744417,23.3740000120103"
+                    Point2="77.266664744417,23.3740000120103"
+                    Point3="77.266664744417,27.3740000120103" />
+                  <mssgle:LineSegment
+                    End="77.266664744417,50.5000000298024" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.9005738777915,28.3740000120103,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgFactCustomer to FactBPCustomer\DST - Slowly Changing Dimension FactBPCustomer">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{C0FB4762-1788-426F-81ED-59A08A7B2B6D}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[FactBPCustomer]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;address&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[address_key]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;address_key&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[amount]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;amount&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[customer_key]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;customer_key&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[first_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;first_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[frequency]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;frequency&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[last_name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;last_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[monetary]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;monetary&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[payment_date_key]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;payment_date_key&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[recency]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;recency&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_date_key]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;rental_date_key&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_id]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;rental_id&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SRC - Stage stgFactCustomer.Outputs[OLE DB Source Output].Columns[rental_key]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;rental_key&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF - Load from stgFactCustomer to FactBPCustomer\SRC - Stage stgFactCustomer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
