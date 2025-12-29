@@ -1,7 +1,7 @@
-Sakila Data Warehouse Project
+**Sakila Data Warehouse Project** 
 Dự án xây dựng Kho dữ liệu (Data Warehouse) dựa trên cơ sở dữ liệu mẫu Sakila, nhằm hỗ trợ phân tích xu hướng khách hàng và hiệu quả kinh doanh của cửa hàng cho thuê phim.
 
-Tổng quan đề tài
+**Tổng quan đề tài**
 Dự án tập trung vào việc chuyển đổi dữ liệu tác nghiệp (OLTP) sang mô hình kho dữ liệu (OLAP) để giải quyết các bài toán phân tích kinh doanh như:
 Business Performance: Đánh giá doanh thu theo nhân viên và thế mạnh của từng nhân viên.
 Rental Expense: Phân tích chi tiêu khách hàng theo khu vực địa lý và xác định "khung giờ vàng".
@@ -9,7 +9,7 @@ Film Actor Analysis: Phân tích sức hút thương mại của diễn viên đ
 Film Inventory Analysis: Theo dõi tình trạng tồn kho và giá trị thuê theo thể loại phim.
 Customer Segment: Phân khúc khách hàng dựa trên mô hình RFM (Recency, Frequency, Monetary).
 
-Công cụ sử dụng
+**Công cụ sử dụng**
 Hệ quản trị CSDL: SQL Server Management Studio 2019.
 Công cụ ETL: Visual Studio tích hợp SQL Server Integration Services (SSIS).
 Mô hình hóa đa chiều: SQL Server Analysis Services (SSAS)
@@ -17,17 +17,17 @@ Trực quan hóa dữ liệu: Power BI Desktop.
 Kiến trúc kho dữ liệu
 Dự án sử dụng lược đồ Galaxy Schema (Lược đồ giải ngân hà) bao gồm các bảng Fact và Dimension chính:
 
-Bảng Fact:
+**Bảng Fact:**
 FactBPerformance (Hiệu suất kinh doanh)
 FactRentalExpense (Chi phí thuê phim)
 FactFilmActor (Phân tích diễn viên)
 FactFilmInventory (Phân tích tồn kho)
 FactCustomerSegment (Phân khúc khách hàng)
 
-Bảng Dimension:
+**Bảng Dimension:**
 DimDate, DimAddress, DimCustomers, DimRentals, DimStaffs, DimInventory, DimActors.
 
-Quy trình triển khai
+**Quy trình triển khai**
 Thiết kế OLAP: Xác định các quy trình nghiệp vụ (Business Processes) và xây dựng Detailed Bus Matrix.
 Xây dựng ETL (SSIS): * Trích xuất dữ liệu từ nguồn Sakila.
 Staging dữ liệu để xử lý chuẩn hóa.
